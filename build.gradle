@@ -1,0 +1,24 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    ext.kotlin_version = '1.6.10'
+    ext.rxandroid_version = '3.0.0'
+    ext.hilt_version = '2.42'
+    repositories {
+        mavenCentral()
+        google()
+        maven { url "https://maven.juspay.in/jp-build-packages/hypersdk-asset-download/releases/" }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.2.0'
+        // Add the Crashlytics Gradle plugin.
+        classpath "com.newrelic.agent.android:agent-gradle-plugin:6.7.0"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "com.google.dagger:hilt-android-gradle-plugin:$hilt_version"
+    }
+}
+
+plugins {
+    id 'com.android.application' version '7.3.0' apply false
+    id 'com.android.library' version '7.3.0' apply false
+    id 'org.jetbrains.kotlin.android' version '1.7.10' apply false
+}
